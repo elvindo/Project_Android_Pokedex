@@ -51,7 +51,7 @@ fun LoginScreen(navController: NavController) {
         OutlinedTextField(value = email, onValueChange = { email = it }, label = { Text("Email") })
         OutlinedTextField(value = password, onValueChange = { password = it }, label = { Text("Password") })
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { viewModel.login(email, password) }) {
+        Button(onClick = { viewModel.login(context, email, password) }) {
             Text("Login")
         }
         TextButton(onClick = { navController.navigate(Screen.Register.route) }) {

@@ -3,6 +3,7 @@ package com.example.pokedexandroidapp.Presentation.auth
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pokedexandroidapp.data.local.SessionManager
 import com.example.pokedexandroidapp.data.local.entity.User
 import com.example.pokedexandroidapp.data.repository.AuthRepository
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,16 +19,29 @@ class AuthViewModel(context: Context) : ViewModel() {
     private val _registerSuccess = MutableStateFlow<Boolean?>(null)
     val registerSuccess: StateFlow<Boolean?> = _registerSuccess
 
-    fun register(name: String, email: String, password: String) {
+    fun register(context: Context, name: String, email: String, password: String) {
         viewModelScope.launch {
-            val result = repository.register(User(name = name, email = email, password = password))
+            val user = User(name = name, email = email, password = password)
+            val result = repository.register(user)
+            if (result) {
+                SessionManager(context).apply {
+                    saveName(user.name)
+                    saveEmail(user.email)
+                }
+            }
             _registerSuccess.value = result
         }
     }
 
-    fun login(email: String, password: String) {
+    fun login(context: Context, email: String, password: String) {
         viewModelScope.launch {
             val user = repository.login(email, password)
+            if (user != null) {
+                SessionManager(context).apply {
+                    saveName(user.name)
+                    saveEmail(user.email)
+                }
+            }
             _loginSuccess.value = user != null
         }
     }
