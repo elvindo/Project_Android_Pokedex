@@ -9,7 +9,7 @@ A simple and clean Pokedex app built with **Kotlin**, following **modern Android
 - Fetch and display Pokémon list from PokeAPI
 - Real-time search functionality
 - Detail view for each Pokémon (image, name, abilities)
-- Snackbar for search errors (e.g. "not found")
+- Snackbar for search errors 
 - Modern UI with **Material 3** and **Jetpack Compose**
 - Clean architecture with proper separation of concerns
 
@@ -63,7 +63,7 @@ A simple and clean Pokedex app built with **Kotlin**, following **modern Android
 | Screen | Preview | Screen | Preview |
 |--------|---------|--------|---------|
 | LOG IN | <img src="https://drive.google.com/uc?id=1EY51yzx1I7KV8MrzIu1S6EPpa9uXmA0B" width="250" /> | SIGN UP | <img src="https://drive.google.com/uc?id=1ZVM8WDM8LG-xzBCG6XKtEOrw1YlJR99u" width="250" /> |
-| HOME | <img src="https://drive.google.com/uc?id=19mU13pIrMz23wFLIAWco0tWk5i3hImId" width="250" />| DETAIL POKEMON | <img src="https://drive.google.com/uc?id=1zsl0k_b2Z95uRhySd5fO7E5BtnXJqsnY" width="250" /> |
+| HOME | <img src="https://drive.google.com/uc?id=1Ly8DlT8ujsAFY-Mo9BAIa75UDlE99lx1" width="250" />| DETAIL POKEMON | <img src="https://drive.google.com/uc?id=1zsl0k_b2Z95uRhySd5fO7E5BtnXJqsnY" width="250" /> |
 | PROFILE | <img src="https://drive.google.com/uc?id=1_NSPf3NuNkt5Y7NEbWpVWrBa-5CSbbwr" width="250" /> | SEARCH FEATURE | <img src="https://drive.google.com/uc?id=1dVPOV9WTW-ZjKdAIyPvVb11Jk4PBjmLr" width="250" /> |
 
 ---
