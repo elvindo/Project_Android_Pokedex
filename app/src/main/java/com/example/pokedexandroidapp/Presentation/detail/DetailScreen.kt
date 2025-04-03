@@ -82,7 +82,7 @@ fun DetailScreen(navController: NavController, name: String) {
                     text = pokemon?.name?.replaceFirstChar { it.uppercase() } ?: "-",
                     style = TextStyle(
                         fontWeight = FontWeight.Bold,
-                        fontSize = 32.sp,
+                        fontSize = 36.sp,
                         color = Color.Black,
                         textAlign = TextAlign.Center
                     ),
