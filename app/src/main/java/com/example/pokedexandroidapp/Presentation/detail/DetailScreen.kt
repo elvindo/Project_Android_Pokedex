@@ -78,23 +78,17 @@ fun DetailScreen(navController: NavController, name: String) {
                 }
 
                 // Nama Pokemon
-                OutlinedTextField(
-                    value = pokemon?.name?.replaceFirstChar { it.uppercase() } ?: "-",
-                    onValueChange = {},
-                    enabled = true,
-                    textStyle = TextStyle(
+                Text(
+                    text = pokemon?.name?.replaceFirstChar { it.uppercase() } ?: "-",
+                    style = TextStyle(
                         fontWeight = FontWeight.Bold,
-                        fontSize = 16.sp,
+                        fontSize = 32.sp,
                         color = Color.Black,
                         textAlign = TextAlign.Center
                     ),
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp),
-                    colors = OutlinedTextFieldDefaults.colors(
-                        disabledTextColor = Color.Black,
-                        disabledBorderColor = Color.LightGray,
-                        disabledContainerColor = Color(0xFFF8F8F8)
-                    )
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp)
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
