@@ -9,5 +9,7 @@ data class PokemonResponse(
 
 data class PokemonResult(
     val name: String,
-    val url: String
+    val url: String,
+    val id: Int = 0,
+    val imageUrl: String = ""
 )

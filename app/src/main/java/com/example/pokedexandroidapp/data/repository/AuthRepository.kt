@@ -1,7 +1,6 @@
 package com.example.pokedexandroidapp.data.repository
 
 import android.content.Context
-import android.provider.ContactsContract
 import com.example.pokedexandroidapp.data.local.UserDatabase
 import com.example.pokedexandroidapp.data.local.entity.User
 

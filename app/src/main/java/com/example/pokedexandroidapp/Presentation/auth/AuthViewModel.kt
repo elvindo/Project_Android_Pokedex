@@ -19,30 +19,57 @@ class AuthViewModel(context: Context) : ViewModel() {
     private val _registerSuccess = MutableStateFlow<Boolean?>(null)
     val registerSuccess: StateFlow<Boolean?> = _registerSuccess
 
+    private val _errorMessage = MutableStateFlow<String?>(null)
+    val errorMessage: StateFlow<String?> = _errorMessage
+
     fun register(context: Context, name: String, email: String, password: String) {
         viewModelScope.launch {
+            if (name.isBlank() || email.isBlank() || password.isBlank()) {
+                _errorMessage.value = "Please fill in all fields."
+                return@launch
+            }
+
             val user = User(name = name, email = email, password = password)
             val result = repository.register(user)
+
             if (result) {
                 SessionManager(context).apply {
                     saveName(user.name)
                     saveEmail(user.email)
                 }
+                _registerSuccess.value = true
+            } else {
+                _errorMessage.value = "Account with this email already exists."
+                _registerSuccess.value = false
             }
-            _registerSuccess.value = result
         }
     }
 
     fun login(context: Context, email: String, password: String) {
         viewModelScope.launch {
+            if (email.isBlank() || password.isBlank()) {
+                _errorMessage.value = "Please fill in all fields."
+                return@launch
+            }
+
             val user = repository.login(email, password)
             if (user != null) {
                 SessionManager(context).apply {
                     saveName(user.name)
                     saveEmail(user.email)
                 }
+                _loginSuccess.value = true
+            } else {
+                _errorMessage.value = "Invalid email or password."
+                _loginSuccess.value = false
             }
-            _loginSuccess.value = user != null
         }
     }
+
+    fun clearErrorMessage() {
+        _errorMessage.value = null
+    }
+
+
+
 }
