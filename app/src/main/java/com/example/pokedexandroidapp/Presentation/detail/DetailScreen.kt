@@ -83,7 +83,7 @@ fun DetailScreen(navController: NavController, name: String) {
                     style = TextStyle(
                         fontWeight = FontWeight.Bold,
                         fontSize = 36.sp,
-                        color = Color.Black,
+                        color = MaterialTheme.colorScheme.onBackground,
                         textAlign = TextAlign.Center
                     ),
                     modifier = Modifier
