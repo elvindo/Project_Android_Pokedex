@@ -53,6 +53,11 @@ A simple and clean Pokedex app built with **Kotlin**, following **modern Android
 
 ---
 
+### 🧪 APK file
+[Try this on your phone](https://drive.google.com/file/d/10IWKUjBMWGld4vdqgle63KGpEP1hk5NR/view?usp=sharing)
+
+---
+
 ### 📝 Demo Video
 [Watch on Google Drive](https://drive.google.com/file/d/1_JVGOteoMukgiNAZWYs34SrKEaTemuZ5/view?usp=sharing)
 
